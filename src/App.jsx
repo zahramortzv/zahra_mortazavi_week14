@@ -32,8 +32,7 @@ function App() {
         </button>
       </div>
 
-<ContactsList contacts={filtered} total={contacts.length} onAdd={() => setShowForm(true)} />
-
+    <ContactsList contacts={filtered} setContacts={setContacts} total={contacts.length} onAdd={() => setShowForm(true)} />
       {showForm && (
         <Modal title="مخاطب جدید" onClose={() => setShowForm(false)}>
           <Contacts setContacts={setContacts} onClose={() => setShowForm(false)}/>

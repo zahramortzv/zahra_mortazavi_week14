@@ -22,7 +22,9 @@ function Contacts({setContacts,onClose }) {
     setError("لطفاً همه‌ی فیلدها را پر کنید");
     return; 
     }
-    setContacts((contacts) => [...contacts,contact]);
+    setError("");
+    const newContact = { ...contact, id: crypto.randomUUID() };
+    setContacts((contacts) => [...contacts, newContact]);
      onClose(); 
   }
 
